@@ -31,7 +31,7 @@ class Create extends Component
                 'product_id' => '',
                 'quantity'   => '',
                 'price'      => '',
-                'subtotal'   => '',
+                'subtotal'   => '0',
             ],
         ]);
     }
@@ -73,6 +73,7 @@ class Create extends Component
             $quantity                                 = $stock; // Update quantity untuk perhitungan
         }
 
+        $subtotal = 0;
         // Hitung subtotal
         $subtotal = $quantity * $price;
 
