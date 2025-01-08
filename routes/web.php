@@ -22,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/products/{products}', \App\Livewire\Products\Edit::class)->name('products.edit');
     # Orders
     Route::get('/orders', \App\Livewire\Orders\Index::class)->name('orders.index');
+    Route::get('/orders/create', \App\Livewire\Orders\Create::class)->name('orders.create');
     # Laporan
     Route::get('/laporan', \App\Livewire\Laporan\Index::class)->name('laporan.index');
 });

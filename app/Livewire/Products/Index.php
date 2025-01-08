@@ -1,7 +1,6 @@
 <?php
 namespace App\Livewire\Products;
 use App\Models\product;
-use App\Services\JasperService;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
@@ -15,14 +14,6 @@ class Index extends Component
     public $id;
     public function print()
     {
-        // $input  = storage_path('jasper/hasil_produk.jrxml');
-        // $output = storage_path("jasper/hasil_produk");
-        // $query  = product::all();
-        // $jasper = new JasperService();
-        // $jasper->generate($input, $output, $query);
-        // return response()->download(
-        //     $output . ".pdf"
-        // );
         $this->products = Product::all();
         $pdf            = Pdf::loadView('Livewire.PDF.product', ['produk' => $this->products]);
         return response()->streamDownload(function () use ($pdf) {

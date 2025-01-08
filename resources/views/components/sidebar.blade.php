@@ -9,19 +9,21 @@
         </li>
         <li class="nav-heading">Page</li>
         <li class="nav-item">
-            <a class="nav-link {{ Route::currentRouteName() === 'categories.index' ? '' : 'collapsed' }}" href="{{ route('categories.index') }}" wire:navigate>
+            <a class="nav-link
+            {{ Route::currentRouteName() === 'categories.index' ||Route::currentRouteName() === 'categories.create' || Route::currentRouteName() === 'categories.edit' ? '' : 'collapsed' }}
+            " href="{{ route('categories.index') }}" wire:navigate>
                 <i class="bi bi-clipboard-check"></i>
                 <span>Categories</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Route::currentRouteName() === 'products.index' || Route::currentRouteName() === 'products.create' ? '' : 'collapsed' }}" href="{{ route('products.index') }}" wire:navigate>
+            <a class="nav-link {{ Route::currentRouteName() === 'products.index' || Route::currentRouteName() === 'products.create' || Route::currentRouteName() === 'products.edit' ? '' : 'collapsed' }}" href="{{ route('products.index') }}" wire:navigate>
                 <i class="bi bi-bag-check"></i>
                 <span>Product</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link {{ Route::currentRouteName() === 'orders.index' ? '' : 'collapsed' }}" href="{{ route('orders.index') }}" wire:navigate>
+            <a class="nav-link {{ Route::currentRouteName() === 'orders.index' || Route::currentRouteName() === 'orders.create' ? '' : 'collapsed' }}" href="{{ route('orders.index') }}" wire:navigate>
                 <i class="bi bi-cart"></i>
                 <span>Orders</span>
             </a>
